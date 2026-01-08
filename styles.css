@@ -1,0 +1,49 @@
+:root{
+  --accent: #FAA18F;
+  --bg: #fff0f2;
+  --text: #440E04;
+  --muted: #7a4b48;
+  --container: 1000px;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background: var(--bg) url('images/pinkbg.jpg') center/cover no-repeat;
+  color:var(--text);
+  line-height:1.4;
+}
+.container{max-width:var(--container);margin:0 auto;padding:1rem}
+.site-header{background:rgba(255,255,255,0.85);backdrop-filter:blur(4px);border-bottom:4px solid var(--accent)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem}
+.site-title{margin:0;font-size:1.25rem;color:var(--text)}
+.main-nav{display:flex;gap:0.5rem}
+.nav-link{padding:0.4rem 0.75rem;border-radius:6px;text-decoration:none;color:var(--text);background:transparent}
+.nav-link:hover{background:var(--accent);color:white}
+.hero{display:flex;gap:1rem;align-items:center;padding:1rem 0}
+.hero-photo{width:220px;height:220px;object-fit:cover;border-radius:8px;border:4px solid white;box-shadow:0 4px 14px rgba(0,0,0,0.12)}
+.hero-text h2{margin:0 0 0.5rem 0}
+.lead{color:var(--muted);margin:0 0 0.5rem 0}
+.quote{font-style:italic;color:#B13D20}
+hr{border:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);margin:1.25rem 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0.75rem}
+.grid img{width:100%;height:150px;object-fit:cover;border-radius:6px;display:block}
+.view-more{display:flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;padding:0.5rem;border-radius:6px;text-decoration:none;font-weight:600}
+.gallery-preview h3{margin-top:0}
+.site-footer{padding:1rem 0;text-align:center;color:var(--muted);font-size:0.9rem}
+
+/* Gallery page specifics */
+.masonry{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.8rem}
+.masonry img{height:220px;object-fit:cover}
+
+@media (max-width:700px){
+  .hero{flex-direction:column;align-items:center}
+  .hero-photo{width:160px;height:160px}
+}
+
+/* Accessibility + layout helpers */
+html{scroll-behavior:smooth}
+:focus{outline:3px solid var(--accent);outline-offset:3px}
+.skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;background:#fff;padding:0.5rem;border-radius:4px;box-shadow:0 4px 12px rgba(0,0,0,0.12)}
+section{padding:1.25rem 0}
